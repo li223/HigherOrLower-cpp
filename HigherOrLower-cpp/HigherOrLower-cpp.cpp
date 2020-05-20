@@ -21,27 +21,26 @@ int main()
             std::cin >> guess;
             ToLower(guess);
         }
-        while (true)
+
+        if (guess == "higher" && rannum < nextnum)
         {
-            if (guess == "higher" && rannum < nextnum)
-            {
-                score++;
-                std::cout << "Correct" << std::endl;
-                break;
-            }
-            else if (guess == "lower" && rannum > nextnum)
-            {
-                score++;
-                std::cout << "Correct" << std::endl;
-                break;
-            }
-            else
-            {
-                std::cout << "Incorrect" << std::endl;
-                score--;
-                break;
-            }
+            score++;
+            std::cout << "Correct" << std::endl;
+            break;
         }
+        else if (guess == "lower" && rannum > nextnum)
+        {
+            score++;
+            std::cout << "Correct" << std::endl;
+            break;
+        }
+        else
+        {
+            std::cout << "Incorrect" << std::endl;
+            score--;
+            break;
+        }
+        
         std::cout << "Score: " << score << "\n\n";
     }
     return 0;
